@@ -13,9 +13,9 @@ var gemsArray = [
 ]
 
 //gets values for each gem
-function scramble () {
+function scramble() {
     for (var i = 0; i < gemsArray.length; i ++) {
-        gemNumbers = Math.floor(Math.random() * 13 + 1);
+        gemNumbers = Math.floor(Math.random() * 10 + 2);
         gemValue = $(gemsArray[i]);
         gemValue.attr("data-value", gemNumbers);
     }
@@ -23,7 +23,7 @@ function scramble () {
 
 //generates random value for the target score
 function random() {
-    number = Math.floor(Math.random() * 1000);
+    number = Math.floor(Math.random() * 220);
     document.getElementById("targetNumber").textContent = number;
 }
 
@@ -35,7 +35,8 @@ function start() {
     yourScore = 0;
     gameWin = false;
     gameLose = false;
-    random ();
+    $("#currentValue").text(yourScore);
+    random();
     scramble();
 }
 
